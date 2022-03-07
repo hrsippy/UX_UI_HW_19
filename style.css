@@ -88,6 +88,7 @@ li {
 
 .hinojosaHeader {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	padding-left: 35px;
 	padding-top: 15px;
@@ -109,6 +110,15 @@ li {
 	padding-left: 20px;
 }
 
+.searchBar {
+	margin-right: 30px;
+	width: 60%;
+	height: 20px;
+	background-color: #4A4A4A transparent;
+	color: white;
+	border-radius: 10px;
+	border-width: 3px;
+}
 /*End Navigation*/
 
 /*Quick Link*/
@@ -119,6 +129,7 @@ li {
 	justify-content: space-evenly;
 	background-color: #E73F34;
 	height: auto;
+	margin-top: -3px;
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
@@ -146,7 +157,9 @@ li {
 .row {
 	display: flex;
 	justify-content: center;
+	height: auto;
   }
+
   .column1 {
 	flex: 50%;
 	padding: 16px;
@@ -158,6 +171,8 @@ li {
 /*Newsletter*/
 
   .newsSection {
+	  display: flex;
+	  flex-direction: column;
 	  background-color: #4A4A4A;
 	  height: 450px;
   }
@@ -168,9 +183,8 @@ li {
 }
 
 .newsletter {
-	position: relative;
-	top: 0;
-	left: 350px;
+	display: flex;
+	justify-content: center;
 }
 
 .newsletterHeader{
@@ -182,17 +196,7 @@ li {
 }
 
 .image1 {
-	position: absolute;
-	top: 60px;
-	left: 80px;
-}
-
-.image2 {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-
+	margin-top: 100px;
 }
 
 /*End Newsletter*/
@@ -200,12 +204,13 @@ li {
 /*Bottom Quick Links*/
 .navContainer {
 	display: flex;
+	flex-wrap: wrap;
 	align-content: center;
 	background-color: #E73F34;
 	height: 400px;
 	display: grid;
 	grid-gap: 30px;
-	padding: 100px 350px 250px 350px;
+	padding: 100px 15% 250px 15%;
 	grid-template-areas: 
 	'toplft topmd toprt toprt toprt'
 	'btmlft topmd trilft trimd trirt';
@@ -278,7 +283,7 @@ li {
 }
 
 .item7 h2 {
-	font-size: 20x;
+	font-size: 20px;
 }
 
 /*End Bottom Quick Links*/
@@ -302,19 +307,6 @@ li {
 	background-color: #4A4A4A;
 	cursor: pointer;
  }
- 
- /*.modalElement{
-	display: block;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(206, 195, 175, 0.7);
- } 
- */
  
  .modal-content p{
 	font-size: 14px;
@@ -434,7 +426,8 @@ li {
     background-color: #4A4A4A;
 	color: white;
     height: 300px;
-    display: flex;  
+    display: flex;
+	flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 	padding: 100px 50px 0 50px;
@@ -471,3 +464,49 @@ li {
 }
 
 /*End Footer*/
+
+/*Mobile Media Query*/
+@media only screen and (max-width: 1000px) 
+  {
+	  .row {
+		  display: flex;
+		  flex-wrap:wrap;
+	  }
+
+	  .navContainer {
+		align-content: center;
+		background-color: #E73F34;
+		height: auto;
+		display: grid;
+		grid-gap: 30px;
+		padding: 3% 3% 150px 3%;
+		grid-template-areas: 
+		'toplft topmd' 
+		'btmlft topmd'
+		'toprt toprt'
+		'trilft trimd'
+		'trirt trirt';
+	  }
+
+	  .footer {
+		  height: 550px;
+	  }
+
+	  .modal-content {
+		  bottom: 525px;
+		  width: 90%;
+		  left: 3%;
+	  }
+
+	  #thank-you {
+		  bottom: 525px;
+		  width: 90%;
+		left: 3%;
+
+	  }
+
+
+	  .emailBox {
+		  width: 600px;
+	  }
+  }
